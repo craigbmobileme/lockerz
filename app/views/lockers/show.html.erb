@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<h1>Your locker code is, please save this to retrieve your bag:</h1>
+<%= @locker.code %>
+<br/>
+<h1> Your locker size is:</h1>
+<%= @locker.size %>
+<h1> Your locker number is is:</h1>
+<%= @locker.size %> <%= @locker.number %>
+<h1> Your bag size is:</h1>
+<%= @locker.bag_size %>
+
+<%= link_to 'Back', lockers_path %>

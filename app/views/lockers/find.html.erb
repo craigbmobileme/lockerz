@@ -1,0 +1,16 @@
+<%= form_tag("/lockers/find", method: "get") do %>
+  <%= label_tag(:q, "Retrieve Bag From Locker By Code:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Retrieve") %>
+<% end %>
+
+<% if !@query.nil? && !@locker_found %>
+	<h1>Locker Not Found for code: </h1>
+	<%= @query %>
+<% elsif @locker_found %>
+	<h1>Locker found!</h1>
+	<%=@locker_bag_size%> has been found in locker <%=@locker_size%> number: <%=@locker_number%> and the locker is available for use.
+
+<% end %>
+
+<%= link_to 'Back', lockers_path %>
